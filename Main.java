@@ -54,7 +54,7 @@ class InventorySystem {
     public void addItem(String name, String serialNumber, int value) {
         InventoryItem item = new InventoryItem(name, serialNumber, value);
         inventory.add(item);
-        System.out.println("Item added successfully.");
+        
     }
 
     public void deleteItem(String serialNumber) {
@@ -63,13 +63,11 @@ class InventorySystem {
             if (item.getSerialNumber().equals(serialNumber)) {
                 inventory.remove(item);
                 found = true;
-                System.out.println("Item deleted successfully.");
+                
                 break;
             }
         }
-        if (!found) {
-            System.out.println("Item not found in the inventory.");
-        }
+        
     }
 
     public void updateItem(String serialNumber, String newName, int newValue) {
@@ -79,18 +77,16 @@ class InventorySystem {
                 item.setName(newName);
                 item.setValue(newValue);
                 found = true;
-                System.out.println("Item updated successfully.");
+            
                 break;
             }
         }
-        if (!found) {
-            System.out.println("Item not found in the inventory.");
-        }
+        
     }
 
     public void showAllItems() {
         for (InventoryItem item : inventory) {
-            System.out.println(item);
+            System.out.println(item.getName() + ", " + item.getSerialNumber() + ", " + item.getValue());
         }
     }
 }
@@ -132,13 +128,11 @@ public class Main {
                 case 4:
                     inventorySystem.showAllItems();
                     break;
-                case 5:
-                    System.out.println("Exiting the program...");
-                    break;
-                default:
-                    System.out.println("Invalid choice. Please try again.");
-                    break;
+                
+              
             }
+
+            System.out.println();
 
         } while (choice != 5);
 
@@ -146,6 +140,7 @@ public class Main {
     }
 
     private static void printMenu() {
+        
         System.out.println("Press 1 to add an item.");
         System.out.println("Press 2 to delete an item.");
         System.out.println("Press 3 to update an item.");
@@ -157,11 +152,10 @@ public class Main {
         int input = -1;
         try {
             input = scanner.nextInt();
-            scanner.nextLine(); // Consume the newline character
+            scanner.nextLine(); 
         } catch (InputMismatchException e) {
-            scanner.nextLine(); // Consume the invalid input
+            scanner.nextLine(); 
         }
         return input;
     }
 }
-
