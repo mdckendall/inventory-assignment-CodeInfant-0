@@ -86,7 +86,7 @@ class InventorySystem {
 
     public void showAllItems() {
         for (InventoryItem item : inventory) {
-            System.out.println(item.getName() + ", " + item.getSerialNumber() + ", " + item.getValue());
+            System.out.println(item.getName() + "," + item.getSerialNumber() + "," + item.getValue());
         }
     }
 }
@@ -117,7 +117,7 @@ public class Main {
                     inventorySystem.deleteItem(deleteSerialNumber);
                     break;
                 case 3:
-                    System.out.println("Enter the serial number of the item to update:");
+                    System.out.println("Enter the serial number of the item to change:");
                     String updateSerialNumber = scanner.nextLine();
                     System.out.println("Enter the new name:");
                     String newName = scanner.nextLine();
