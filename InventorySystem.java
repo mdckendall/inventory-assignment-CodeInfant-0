@@ -150,5 +150,6 @@ public class InventorySystem {
         for (InventoryItem item : inventory) {
             System.out.println(item);
         }
+        
     }
 }
