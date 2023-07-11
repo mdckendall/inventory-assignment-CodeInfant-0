@@ -90,7 +90,7 @@ class InventorySystem {
 
     public void showAllItems() {
         for (InventoryItem item : inventory) {
-            System.out.println(item.getName() + ", " + item.getSerialNumber() + ", " + item.getValue());
+            System.out.println(item);
         }
     }
 }
@@ -146,6 +146,7 @@ public class Main {
     }
 
     private static void printMenu() {
+        System.out.println("Here is a sample run:");
         System.out.println("Press 1 to add an item.");
         System.out.println("Press 2 to delete an item.");
         System.out.println("Press 3 to update an item.");
@@ -157,9 +158,9 @@ public class Main {
         int input = -1;
         try {
             input = scanner.nextInt();
-            scanner.nextLine(); 
+            scanner.nextLine(); // Consume the newline character
         } catch (InputMismatchException e) {
-            scanner.nextLine(); 
+            scanner.nextLine(); // Consume the invalid input
         }
         return input;
     }
