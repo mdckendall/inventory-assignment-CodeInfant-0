@@ -90,7 +90,7 @@ class InventorySystem {
 
     public void showAllItems() {
         for (InventoryItem item : inventory) {
-            System.out.println(item);
+            System.out.println(item.getName() + ", " + item.getSerialNumber() + ", " + item.getValue());
         }
     }
 }
@@ -157,10 +157,11 @@ public class Main {
         int input = -1;
         try {
             input = scanner.nextInt();
-            scanner.nextLine(); // Consume the newline character
+            scanner.nextLine(); 
         } catch (InputMismatchException e) {
-            scanner.nextLine(); // Consume the invalid input
+            scanner.nextLine(); 
         }
         return input;
     }
 }
+
