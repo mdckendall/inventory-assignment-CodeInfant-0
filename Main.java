@@ -157,9 +157,9 @@ public class Main {
         int input = -1;
         try {
             input = scanner.nextInt();
-            scanner.nextLine(); 
+            scanner.nextLine(); // Consume the newline character
         } catch (InputMismatchException e) {
-            scanner.nextLine(); 
+            scanner.nextLine(); // Consume the invalid input
         }
         return input;
     }
